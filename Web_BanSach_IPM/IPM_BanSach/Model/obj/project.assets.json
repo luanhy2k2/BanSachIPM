@@ -2861,11 +2861,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Model\\Model.csproj",
+      "projectUniqueName": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Model\\Model.csproj",
+      "projectPath": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Model\\Model.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Model\\obj\\",
+      "outputPath": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

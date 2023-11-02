@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KMjfLJ02isURuqOTDRJ4WkMSiFNnecOlPHx+kAhg23GxyYQYS6edA5iAykU/+8GktVTztj7uR6zM5U9CpBYuwQ==",
+  "dgSpecHash": "FUgcwoo6Uu9CN+KQSiOV6F4KyGxWBL/CQdwMK+uNCBvt4rCPJ8lKx63BgjoPbG+f1P3w5o1InbZ+9MickudY+g==",
   "success": true,
-  "projectFilePath": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Model\\Model.csproj",
+  "projectFilePath": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Model\\Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

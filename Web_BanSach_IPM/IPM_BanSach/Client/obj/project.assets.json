@@ -3344,11 +3344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Client\\Client.csproj",
+      "projectPath": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Client\\obj\\",
+      "outputPath": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3370,8 +3370,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Model\\Model.csproj": {
-              "projectPath": "D:\\DELL E7450\\GitHub\\IPM_BanSach\\Model\\Model.csproj"
+            "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Model\\Model.csproj": {
+              "projectPath": "D:\\DELL E7450\\GitHub\\Web_BanSach_IPM\\IPM_BanSach\\Model\\Model.csproj"
             }
           }
         }

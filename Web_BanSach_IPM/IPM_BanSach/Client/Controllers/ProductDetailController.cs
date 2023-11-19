@@ -40,6 +40,7 @@ namespace Client.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        
         [HttpGet]
         [Route("productSameAuthor/{id}")]
         public IActionResult getProductSameAuthor(int id)
@@ -67,6 +68,45 @@ namespace Client.Controllers
                 return Ok(data);
             }
             catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet]
+        [Route("getCommentBySanpId/{id}")]
+        public IActionResult getCommentBySanpId(int id)
+        {
+            try
+            {
+                var data = from comment in db.ProductComments
+                           join nguoidung in db.NguoiDungs on comment.MaNguoiDung equals nguoidung.MaNguoiDung
+                           select new
+                           {
+                               comment.NoiDung,
+                               comment.SanpId,
+                               comment.Id,
+                               nguoidung.HoTen,
+                               nguoidung.MaNguoiDung
+
+                           };
+                return Ok(data.Where(x=>x.SanpId == id).ToList());
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpPost]
+        [Route("addComment")]
+        public IActionResult addComment([FromBody] ProductComment comment)
+        {
+            try
+            {
+                var data = db.ProductComments.Add(comment);
+                db.SaveChanges();
+                return Ok(data);
+            }
+            catch(Exception ex)
             {
                 throw new Exception(ex.Message);
             }

@@ -19,11 +19,10 @@ public partial class NguoiDung
 
     public string? Sdt { get; set; }
 
-    public virtual ICollection<DonHang> DonHangs { get; set; } = new List<DonHang>();
+    public virtual ICollection<HoaDonBan> HoaDonBans { get; } = new List<HoaDonBan>();
 
-    public virtual ICollection<HoaDonBan> HoaDonBans { get; set; } = new List<HoaDonBan>();
+    public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; } = new List<HoaDonNhap>();
+    public virtual ICollection<ProductComment> ProductComments { get; set; } = new List<ProductComment>();
 
-    public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; set; } = new List<HoaDonNhap>();
-
-    public virtual ICollection<TaiKhoan> TaiKhoans { get; set; } = new List<TaiKhoan>();
+    public virtual ICollection<TaiKhoan> TaiKhoans { get; } = new List<TaiKhoan>();
 }

@@ -36,6 +36,7 @@ public partial class Sanpham
     public virtual ICollection<ChiTietKho> ChiTietKhos { get; set; } = new List<ChiTietKho>();
 
     public virtual ICollection<GiaCa> GiaCas { get; set; } = new List<GiaCa>();
+    public virtual ICollection<ProductComment> ProductComments { get; set; } = new List<ProductComment>();
 
     public virtual Loaisp Loai { get; set; } = null!;
 

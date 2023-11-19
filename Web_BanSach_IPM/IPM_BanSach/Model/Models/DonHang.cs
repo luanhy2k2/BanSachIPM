@@ -7,15 +7,15 @@ public partial class DonHang
 {
     public int MaDonHang { get; set; }
 
-    public int? MaNguoiDung { get; set; }
-
     public DateTime? NgayDat { get; set; }
 
     public string? TrangThai { get; set; }
 
     public int? ToTal { get; set; }
 
-    public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; } = new List<ChiTietDonHang>();
+    public int? MaKhachHang { get; set; }
 
-    public virtual NguoiDung? MaNguoiDungNavigation { get; set; }
+    public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; } = new List<ChiTietDonHang>();
+
+    public virtual KhachHang? MaKhachHangNavigation { get; set; }
 }

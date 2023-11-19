@@ -45,6 +45,8 @@ public partial class BanSachContext : DbContext
 
     public virtual DbSet<Nhasx> Nhasxes { get; set; }
 
+    public virtual DbSet<ProductComment> ProductComments { get; set; }
+
     public virtual DbSet<Sanpham> Sanphams { get; set; }
 
     public virtual DbSet<Slide> Slides { get; set; }
@@ -55,7 +57,7 @@ public partial class BanSachContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=ADMIN;Database=BanSach;Trusted_Connection=True;Encrypt=False;");
+        => optionsBuilder.UseSqlServer("Server=ADMIN;Database=BanSach;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -162,9 +164,9 @@ public partial class BanSachContext : DbContext
             entity.Property(e => e.NgayDat).HasColumnType("date");
             entity.Property(e => e.TrangThai).HasMaxLength(50);
 
-            entity.HasOne(d => d.MaNguoiDungNavigation).WithMany(p => p.DonHangs)
-                .HasForeignKey(d => d.MaNguoiDung)
-                .HasConstraintName("FK__DonHang__MaNguoi__4D5F7D71");
+            entity.HasOne(d => d.MaKhachHangNavigation).WithMany(p => p.DonHangs)
+                .HasForeignKey(d => d.MaKhachHang)
+                .HasConstraintName("FK__DonHang__MaKhach__607251E5");
         });
 
         modelBuilder.Entity<GiaCa>(entity =>
@@ -282,6 +284,25 @@ public partial class BanSachContext : DbContext
             entity.Property(e => e.Sdt)
                 .HasDefaultValueSql("((0))")
                 .HasColumnName("sdt");
+        });
+
+        modelBuilder.Entity<ProductComment>(entity =>
+        {
+            entity.ToTable("productComment");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.NoiDung)
+                .HasMaxLength(500)
+                .HasColumnName("noiDung");
+            entity.Property(e => e.SanpId).HasColumnName("sanp_id");
+
+            entity.HasOne(d => d.MaNguoiDungNavigation).WithMany(p => p.ProductComments)
+                .HasForeignKey(d => d.MaNguoiDung)
+                .HasConstraintName("FK__productCo__MaTai__0B5CAFEA");
+
+            entity.HasOne(d => d.Sanp).WithMany(p => p.ProductComments)
+                .HasForeignKey(d => d.SanpId)
+                .HasConstraintName("FK__productCo__sanp___0880433F");
         });
 
         modelBuilder.Entity<Sanpham>(entity =>

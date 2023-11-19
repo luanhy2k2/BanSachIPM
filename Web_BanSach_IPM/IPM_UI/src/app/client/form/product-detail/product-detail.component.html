@@ -1,0 +1,107 @@
+<app-header></app-header>
+<app-search></app-search>
+<app-categories></app-categories>
+
+<div class="breadcrumbs">
+    <ul>
+        <li>Trang chủ /</li>
+        <li>Manga-comic /</li>
+        <li>Cô gái nơi xứ lạ -8 /</li>
+    </ul>
+</div>
+<div class="productDetail">
+    <div class="img">
+        <img alt="#" style="width: 90%; height: 90%;" src="assets/img/book/{{productDetail.image}}" />
+    </div>
+    <div class="content">
+        <p class="title">{{productDetail.sanpName}}</p>
+        <p class="id">SKU: {{productDetail.sanpId}}</p>
+        <p class="price">{{productDetail.gia}}đ</p>
+        <div style="padding-top: 0.1em" class="info">
+            <div class="info-left">
+                <p class="lable">
+                    Tác giả: <span style="font-size: 1em; color: gray; font-weight: 50;">{{productDetail.tgName}}</span>
+                </p>
+                <p class="lable">
+                    Năm xuất bản: <span style="font-size: 1em; color: gray; font-weight: 50;">{{productDetail.namsx}}</span>
+                </p>
+                <p class="lable">
+                    Kích thước: <span style="font-size: 1em; color: gray; font-weight: 50;">{{productDetail.size}}cm</span>
+                </p>
+            </div>
+        </div>
+        <div style="padding-top: 0.1em; margin-top: -15px;" class="info-right">
+            <p class="lable">
+                Nhà xuất bản: <span style="font-size: 1em; color: gray; font-weight: 50;">{{productDetail.nsxName}}</span>
+            </p>
+            <p class="lable">
+                Số trang: <span style="font-size: 1em; color: gray; font-weight: 50;">{{productDetail.sotrang}}</span>
+            </p>
+        </div>
+        <br />
+        <div class="info-content">
+            <p class="lable">Nội dung:</p>
+            <br />
+            <p class="ct">Bỏ lỡ cơ hội cướp đi linh hồn của những Người Xứ trong, thầy chỉ còn cách trao cho Shiva chính
+                linh hồn của mình để giúp cô bé thoát khỏi lời nguyền.
+                Nhưng quyết định đó đã khiến thầy quên hết tất cả và trở thành một Kẻ Xứ ngoài giống hệt những đứa trẻ
+                đen, để mặc Shiva bị bắt đi bởi những binh sĩ Xứ trong.
+                Shiva đứng trước nguy cơ bị Xứ trong đem làm vật hiến tế để giải phóng toàn bộ Người Xứ trong khỏi lời
+                nguyền. Một người lạ mặt bất ngờ xuất hiện và giúp đỡ cô bé.</p>
+        </div>
+        <button (click)="addToCart()"  class="btn">Thêm vào giỏ</button>
+    </div>
+</div>
+
+<section class="advisory">
+    <div  class="title padding_title" id="BinhLuan">Bình Luận</div>
+    <div class="count">0 bình luận <span class="sp-sort">Sắp xếp theo
+            <select id="sort" name="sort">
+                <option value="old">Cũ nhất</option>
+                <option value="new">Mới nhất</option>
+            </select>
+        </span>
+    </div>
+    <div class="add-comment" style="position: relative;">
+        <img class="avatar"  src="../../../../../assets/img/book/1YF9HFCE.jpg" />
+        <div class="content">
+            <textarea [(ngModel)] = "addCommentEntity.noiDung" name="mota" rows="3" cols="156" placeholder="Thêm bình luận..."></textarea>
+            <div class="content-bot">
+                
+                <label for="uptofb"></label>
+                <input (click)="addComment()" type="button" value="Đăng" class="btn-up">
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let item of comment" class="contents">
+        <div class="user">
+           
+                <img class="avatar"  src="../../../../../assets/img/book/1YF9HFCE.jpg" />
+          
+        </div>
+        <div class="comment">
+            <div class="title-comment">
+                {{item.hoTen}}
+            </div>
+            <div class="content-comment">
+                {{item.noiDung}}
+            </div>
+        </div>
+    </div>
+    
+    <hr>
+   
+</section>
+<h2 style="text-align: center; margin-bottom: 2em;">SÁCH CÙNG TÁC GIẢ</h2>
+<div style="margin-bottom: 3em" class="products">
+
+    <div *ngFor="let item of productSameAuthors" class="product">
+        <img alt="" style="width: 100%; height: 80%;" [routerLink]="['/detail', item.sanpId]" src="assets/img/book/{{productDetail.image}}" />
+        <p class="content">{{item.sanpName}} </p>
+        <p class="price">{{item.gia}}</p>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+

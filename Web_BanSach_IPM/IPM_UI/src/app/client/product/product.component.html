@@ -1,0 +1,29 @@
+<div class="categories">
+    <ul>
+        <li (click)="sanPhamBanChay()">SÁCH MỚI</li>
+        <li (click)="sanPhamMoi()" >SÁCH BÁN CHẠY</li>
+        <li (click)="sanPhamTinhCam()">TÌNH CẢM</li>
+        <li (click)="sanPhamHuyenAo()">HUYỀN ẢO</li>
+    </ul>
+
+</div>
+
+<div class="products">
+    <div *ngFor="let item of products"class="product">
+        <img [routerLink]="['/detail', item.sanpId]" style="width: 100%; height: 80%;" src="/assets/img/book/{{item.image}}" />
+        <p class="content">{{item.sanpName}}</p>
+        <p class="price" >{{item.gia}}đ</p>
+    </div>
+   
+    
+    
+</div>
+<div style="width: 12%; margin: auto; border-radius: 5px; background-color: #01a14b; height: 3em; text-align: center;">
+    <a href="#" style="text-decoration: none; height: 2em;">
+        <h3 style="text-align: center; height: 2em; padding-top: 0.2em; margin-top: 0em; color: aliceblue; text-align: center;">
+            Xem thêm
+        </h3>
+    </a>
+</div>
+
+

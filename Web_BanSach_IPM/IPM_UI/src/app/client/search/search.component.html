@@ -1,0 +1,27 @@
+<div class="search">
+    <div class="left">
+      <img [routerLink]="['/']"
+           style="width: 68%;"
+           src="//theme.hstatic.net/200000287623/1000948667/14/logo.png?v=298"
+           alt="CÔNG TY CỔ PHẦN XUẤT BẢN VÀ TRUYỀN THÔNG IPM" />
+    </div>
+    <div class="center">
+      
+        <input [(ngModel)]="name" style="padding: 1.2em;" class="find" placeholder="Tìm kiếm..." />
+        <button (click)="search()"
+                style="padding: 1.2em;" class="submit" type="submit">
+          <p>Search</p>
+        </button>
+      
+    </div>
+    <div class="right">
+      <div class="cart">
+        <img [routerLink]="['/cart']" src="/assets/img/cart.png" />
+      </div>
+      <div class="content">
+        <h3><a>Giỏ hàng</a></h3>
+        <p style="margin-top: -8px;">0 sản phẩm</p>
+      </div>
+    </div>
+  </div>
+  

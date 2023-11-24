@@ -10,32 +10,44 @@ const url = 'https://localhost:44301/api/Home/banChay/10';
 export class ProductComponent {
   constructor(private homeService: HomeGetDataService){}
   products: product[] = [];
-  ngOnInit(){
-    this.homeService.getProductSelling().subscribe(res =>{
-      this.products = res;
-    })
-  }
-  sanPhamMoi(){
-
-    this.homeService.getProductNew().subscribe(res =>{
-      this.products = res;
-  })
-  };
-  sanPhamBanChay(){
-
-    this.homeService.getProductSelling().subscribe(res =>{
-      this.products = res;
-  })
-  };
-  sanPhamHuyenAo(){
-    this.homeService.getProductByCategories(3).subscribe(res =>{
-      this.products = res;
-    })
-  };
-  sanPhamTinhCam(){
-    this.homeService.getProductByCategories(2).subscribe(res =>{
-      this.products = res;
-    })
+  quantityProduct:number = 0;
+  
+  ngOnInit() {
+    this.loadProductData('banChay');
   }
 
-}
+  sanPhamMoi() {
+    this.loadProductData('sanPhamMoi');
+  }
+
+  sanPhamBanChay() {
+    this.loadProductData('banChay');
+  }
+  sanPhamHuyenAo() {
+    this.loadProductByCategory(3);
+  }
+  sanPhamTinhCam() {
+    this.loadProductByCategory(2);
+  }
+  showMoreProduct() {
+    this.quantityProduct++;
+    this.loadProductData();
+     // Load data based on the current active criteria
+  }
+  private loadProductData(criteria?: string) {
+    // Default to 'banChay' if no criteria is provided
+    criteria = criteria || 'banChay';
+    this.homeService.getProductData(criteria, this.quantityProduct).subscribe(res => {
+      this.products = res;
+    });
+  }
+
+  private loadProductByCategory(categoryId: number) {
+    this.homeService.getProductsCategory(categoryId, this.quantityProduct).subscribe(res => {
+      this.products = res;
+    });
+  }
+  
+  
+
+} 

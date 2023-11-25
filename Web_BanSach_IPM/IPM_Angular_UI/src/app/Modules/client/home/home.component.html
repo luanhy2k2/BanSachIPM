@@ -1,0 +1,113 @@
+<div class="slice">
+    <img style="width: 100%; height: 100%" src="//theme.hstatic.net/200000287623/1000948667/14/slideshow_1.jpg?v=298" alt="2323123" draggable="false" />
+</div>
+<div class="news">
+    <div class="news-content">
+        <div class="content-left">
+            <img src="//theme.hstatic.net/200000287623/1000948667/14/hpl_icon_1.jpg?v=298" alt="ƯU ĐÃI VẬN CHUYỂN" style="width: 95%; margin-left: 1.2em; margin-top: -1.2em; height: 90%;">
+        </div>
+        <div class="content-right" style="padding: 5%;">
+            <p style="font-weight: bolder;">Miễn phí giao hàng</p>
+            <p style="margin-top: 1.2em;">FreeShip đơn hàng từ 500k</p>
+        </div>
+    </div>
+    <div class="news-content">
+        <div class="content-left">
+            <img src="//theme.hstatic.net/200000287623/1000948667/14/hpl_icon_2.jpg?v=298" alt="THỂ LOẠI SÁCH PHONG PHÚ">
+        </div>
+        <div class="content-right" style="padding: 5%;">
+            <p style="font-weight: bolder;">Thể loại sách</p>
+            <p style="margin-top: 1.2em;">Vô cùng phong phú</p>
+        </div>
+    </div>
+    <div class="news-content">
+        <div class="content-left">
+            <img src="//theme.hstatic.net/200000287623/1000948667/14/hpl_icon_3.jpg?v=298" alt="KHUYẾN MẠI HẤP DẪN">
+        </div>
+        <div class="content-right" style="padding: 5%;">
+            <p style="font-weight: bolder;">Ưu đãi khách hàng</p>
+            <p style="margin-top: 1.2em;">Chính sách khách hàng hấp dẫn</p>
+        </div>
+    </div>
+    <div class="news-content">
+        <div class="content-left">
+            <img src="//theme.hstatic.net/200000287623/1000948667/14/hpl_icon_4.jpg?v=298" alt="Hotline: 03 2838 3979 03 3319 3979">
+        </div>
+        <div class="content-right" style="padding: 5%;">
+            <p style="font-weight: bolder;">HOTLINE</p>
+            <p style="margin-top: 1.2em;">0971877014</p>
+        </div>
+    </div>
+</div>
+<div class="categories">
+    <ul>
+        <li (click)="sanPhamBanChay()">SÁCH MỚI</li>
+        <li (click)="sanPhamMoi()" >SÁCH BÁN CHẠY</li>
+        <li (click)="sanPhamTinhCam()">TÌNH CẢM</li>
+        <li (click)="sanPhamHuyenAo()">HUYỀN ẢO</li>
+    </ul>
+
+</div>
+<div class="products">
+    <div *ngFor="let item of products"class="product">
+        <!-- <img [routerLink]="['/detail', item.sanpId]" style="width: 100%; height: 80%;" src="/assets/img/book/{{item.image}}" /> -->
+        <p class="content">{{item.sanpName}}</p>
+        <p class="price" >{{item.gia}}đ</p>
+    </div>
+</div>
+<div style="width: 12%; margin: auto; border-radius: 5px; background-color: #01a14b; height: 3em; text-align: center;">
+    <a (click)="showMoreProduct()" style="text-decoration: none; height: 2em;">
+        <h3  style="text-align: center; height: 2em; padding-top: 0.2em; margin-top: 0em; color: aliceblue; text-align: center;">
+            Xem thêm
+        </h3>
+    </a>
+</div>
+<div class="slice-2">
+    <div class="left">
+        <img src="https://theme.hstatic.net/200000287623/1000948667/14/hnb_img_2.jpg?v=298" style="width: 100%;" />
+    </div>
+    <div class="right">
+        <img src="https://theme.hstatic.net/200000287623/1000948667/14/hnb_img_1.jpg?v=298" style="width: 100%;" />
+    </div>
+</div>
+
+<h1 style="margin-left: 43%; margin-top: 2%;">Bài viết mới</h1>
+
+<div class="posts">
+    
+    <div class="post">
+        <img src="https://file.hstatic.net/200000287623/article/364704651_674250461414868_2797024277820425816_n_cb1cf5c1c30049f3bf50f2a9276eb5f4_large.jpg" />
+        <div class="content">
+            <h4>[ĐIỂM SÁCH] BẠN CÙNG NHÀ TRÈO LÊN ĐẦU TÔI: CHUYỆN CỦA MỘT NHÀ VĂN LẬP DỊ VÀ BÉ MÈO HOANG HAY NGHĨ NHIỀU</h4>
+            <p>
+                
+        BẠN CÙNG NHÀ THI THOẢNG TRÈO LÊN ĐẦU TÔI&nbsp;là bộ truyện tranh sâu lắng, nhưng cũng không kém phần đáng yêu về cuộc sống hàng ngày của một chàng nhà văn hướng nội và bé mèo ho...
+    
+            </p>
+        </div>
+    </div>
+    <div class="post">
+        <img src="https://file.hstatic.net/200000287623/article/364704651_674250461414868_2797024277820425816_n_cb1cf5c1c30049f3bf50f2a9276eb5f4_large.jpg" />
+        <div class="content">
+            <h4>[ĐIỂM SÁCH] BẠN CÙNG NHÀ TRÈO LÊN ĐẦU TÔI: CHUYỆN CỦA MỘT NHÀ VĂN LẬP DỊ VÀ BÉ MÈO HOANG HAY NGHĨ NHIỀU</h4>
+            <p>
+                
+                BẠN CÙNG NHÀ THI THOẢNG TRÈO LÊN ĐẦU TÔI&nbsp;là bộ truyện tranh sâu lắng, nhưng cũng không kém phần đáng yêu về cuộc sống hàng ngày của một chàng nhà văn hướng nội và bé mèo ho...
+            
+                    </p>
+        </div>
+    </div>
+    <div class="post">
+        <img src="https://file.hstatic.net/200000287623/article/364704651_674250461414868_2797024277820425816_n_cb1cf5c1c30049f3bf50f2a9276eb5f4_large.jpg" />
+        <div class="content">
+            <h4>[ĐIỂM SÁCH] BẠN CÙNG NHÀ TRÈO LÊN ĐẦU TÔI: CHUYỆN CỦA MỘT NHÀ VĂN LẬP DỊ VÀ BÉ MÈO HOANG HAY NGHĨ NHIỀU</h4>
+            <p>
+                
+                BẠN CÙNG NHÀ THI THOẢNG TRÈO LÊN ĐẦU TÔI&nbsp;là bộ truyện tranh sâu lắng, nhưng cũng không kém phần đáng yêu về cuộc sống hàng ngày của một chàng nhà văn hướng nội và bé mèo ho...
+            
+                    </p>
+        </div>
+    </div>
+</div>
+
+

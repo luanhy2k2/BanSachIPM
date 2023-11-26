@@ -50,7 +50,7 @@
 </div>
 <div class="products">
     <div *ngFor="let item of products"class="product">
-        <!-- <img [routerLink]="['/detail', item.sanpId]" style="width: 100%; height: 80%;" src="/assets/img/book/{{item.image}}" /> -->
+        <img [routerLink]="['/client/detail', item.sanpId]" style="width: 100%; height: 80%;" src="/assets/img/book/{{item.image}}" />
         <p class="content">{{item.sanpName}}</p>
         <p class="price" >{{item.gia}}đ</p>
     </div>

@@ -11,6 +11,6 @@ export class SearchClientComponent {
   name: string = "";
   soluong: number = 0;
   search(){
-    this.router.navigate(['/productSearch',this.name]);
+    this.router.navigate(['/client/search',this.name]);
   }
 }

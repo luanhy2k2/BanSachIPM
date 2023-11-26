@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { TemplateModule } from './Layout/Template/template.module';
 import { TemplateRoutingModule } from './Layout/Template/template-routing.module';
 import { ClientModule } from './Modules/client/client.module';
+import { ClientRoutingModule } from './Modules/client/client-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { ClientModule } from './Modules/client/client.module';
     FormsModule,
     TemplateModule,
     TemplateRoutingModule,
+    ClientModule,
+    ClientRoutingModule
    
   ],
   providers: [],

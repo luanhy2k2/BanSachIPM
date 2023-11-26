@@ -8,26 +8,33 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from '@angular/forms';
 import { CategoryClientComponent } from './client/category-client/category-client.component';
+import { HeaderAdminComponent } from './admin/header-admin/header-admin.component';
+import { CategoryAdminComponent } from './admin/category-admin/category-admin.component';
 
 @NgModule({
     declarations: [
         HeaderClientComponent,
         FooterClientComponent,
         SearchClientComponent,
-        CategoryClientComponent
+        CategoryClientComponent,
+        HeaderAdminComponent,
+        CategoryAdminComponent
     ],
     imports: [
         CommonModule,
         RouterModule,
         BrowserModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        
     ],
     exports:[
         HeaderClientComponent,
         FooterClientComponent,
         SearchClientComponent,
-        CategoryClientComponent
+        CategoryClientComponent,
+        HeaderAdminComponent,
+        CategoryAdminComponent
     ]
 })
 export class PartialsModule{ }

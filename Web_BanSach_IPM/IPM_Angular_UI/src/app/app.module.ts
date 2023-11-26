@@ -8,10 +8,14 @@ import { TemplateModule } from './Layout/Template/template.module';
 import { TemplateRoutingModule } from './Layout/Template/template-routing.module';
 import { ClientModule } from './Modules/client/client.module';
 import { ClientRoutingModule } from './Modules/client/client-routing.module';
+import { AdminModule } from './Modules/Admin/admin.module';
+import { AdminRoutingModule } from './Modules/Admin/admin-routing.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,9 @@ import { ClientRoutingModule } from './Modules/client/client-routing.module';
     TemplateModule,
     TemplateRoutingModule,
     ClientModule,
-    ClientRoutingModule
+    ClientRoutingModule,
+    AdminModule,
+    AdminRoutingModule
    
   ],
   providers: [],

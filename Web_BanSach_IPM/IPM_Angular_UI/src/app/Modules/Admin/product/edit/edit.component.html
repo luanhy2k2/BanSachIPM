@@ -1,0 +1,96 @@
+<div class="row">
+    <div>
+
+        <div class="modal-body">
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Mã sách:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.sanpId"type="text" id="id" placeholder="Mã sách" class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Tên sách:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.sanpName"  name="sanp_name" type="text" id="form-field-1" placeholder="Tên sách"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Size:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.size" name="size" type="text" id="form-field-1" placeholder="Size"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Tác giả:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.tgId" name="tg_id" type="text" id="form-field-1" placeholder="Tác giả"
+                    class="col-xs-10 col-sm-5" />
+                <!-- <select ng-model="tacgia">
+                    <option ng-repeat="x in listTg" value="{{{{x.tG_id}}}}">{{{{x.tG_name}}}}</option>
+                </select> -->
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Loại sản phẩm:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <!-- <select ng-model="loaisp">
+                    <option ng-repeat="x in listLoaisp" value="{{{{x.loai_id}}}}">{{{{x.loai_name}}}}</option>
+                </select> -->
+                <input [(ngModel)] = "product.loaiId" name="loai_id" type="text" id="form-field-1" placeholder="Loại sản phẩm"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Nhà xuất bản:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.nsxId" name="nsx_id" type="text" id="form-field-1" placeholder="Nhà xuất bản"
+                    class="col-xs-10 col-sm-5" />
+                <!-- <select ng-model="nhasanxuat">
+                    <option ng-repeat="x in listNhasx" value="{{{{x.nsx_id}}}}">{{{{x.nsx_name}}}}</option>
+                </select> -->
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Số trang:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.sotrang" name="soTrang" type="text" id="form-field-1" placeholder="Số trang"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Tóm tắt:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.tomtat" name="tomTat" type="text" id="form-field-1" placeholder="Năm sản xuất"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Năm sản xuất:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.namsx" name="namsx" type="text" id="form-field-1" placeholder="Năm sản xuất"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">gia:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.gia" name="gia" type="text" id="form-field-1" placeholder="Giá cả"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <label for="txtright">Image:</label>
+            </div>
+            <div class="col-12 col-s-12 padding-box">
+                <input [(ngModel)] = "product.image" name="image" type="text" id="form-field-1" placeholder="Giá cả"
+                    class="col-xs-10 col-sm-5" />
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button (click)="editproduct()"  type="submit" class="btn-form">Thêm danh mục</button>
+        </div>
+    </div>
+</div>

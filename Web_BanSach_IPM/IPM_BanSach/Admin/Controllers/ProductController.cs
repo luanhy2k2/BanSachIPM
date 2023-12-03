@@ -30,9 +30,55 @@ namespace Admin.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        //[HttpPost]
+        //[Route("update")]
+        //public IActionResult update([FromBody] addProduct product)
+        //{
+        //    try
+        //    {
+        //        var data = db.Sanphams.FirstOrDefault(x => x.SanpId == product.sanpham.SanpId);
+        //        if (data == null)
+        //        {
+        //            return NotFound($"product with id {product.sanpham.SanpId} not found");
+        //        }
+        //        data.SanpName = product.sanpham.SanpName;
+        //        data.Namsx = product.sanpham.Namsx;
+        //        data.Sotrang = product.sanpham.Sotrang;
+        //        data.NsxId = product.sanpham.NsxId;
+        //        data.Size = product.sanpham.Size;
+        //        data.Image = product.sanpham.Image;
+        //        data.TgId = product.sanpham.TgId;
+        //        data.LoaiId = product.sanpham.LoaiId;
+        //        data.Tomtat = product.sanpham.Tomtat;
+        //        db.SaveChanges();
+        //        var giaCa = db.GiaCas.FirstOrDefault(x => x.SanpId == product.sanpham.SanpId);
+        //        if (giaCa == null)
+        //        {
+        //            var price = new GiaCa();
+        //            price.SanpId = product.sanpham.SanpId;
+        //            price.Gia = product.gia;
+        //            price.NgayBatDau = DateTime.Now;
+        //            db.GiaCas.Add(price);
+        //            db.SaveChanges();
+        //        }
+        //        else
+        //        {
+        //            giaCa.Gia = product.gia;
+        //            db.SaveChanges();
+        //        }
+
+        //        return Ok(data);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+
         [HttpPost]
         [Route("update")]
-        public IActionResult update(Sanpham product, int gia)
+        public IActionResult update([FromBody] Sanpham product)
         {
             try
             {
@@ -51,21 +97,7 @@ namespace Admin.Controllers
                 data.LoaiId = product.LoaiId;
                 data.Tomtat = product.Tomtat;
                 db.SaveChanges();
-                var giaCa = db.GiaCas.FirstOrDefault(x => x.SanpId == product.SanpId);
-                if (giaCa == null)
-                {
-                    var price = new GiaCa();
-                    price.SanpId = product.SanpId;
-                    price.Gia = gia;
-                    price.NgayBatDau = DateTime.Now;
-                    db.GiaCas.Add(price);
-                    db.SaveChanges();
-                }
-                else
-                {
-                    giaCa.Gia = gia;
-                    db.SaveChanges();
-                }
+
 
                 return Ok(data);
 
@@ -129,7 +161,9 @@ namespace Admin.Controllers
                                sp.Sotrang,
                                gia.Gia,
                                sp.LoaiId,
-                               sp.NsxId
+                               sp.NsxId,
+                               sp.TgId,
+                               sp.Tomtat
                            };
 
                 return Ok(data.FirstOrDefault(x=>x.SanpId == id));
@@ -173,16 +207,17 @@ namespace Admin.Controllers
         {
             try
             {
-                var data = db.Sanphams.FirstOrDefault(x => x.LoaiId == id);
+                var data = db.Sanphams.FirstOrDefault(x => x.SanpId == id);
+                var gia = db.GiaCas.FirstOrDefault(x => x.SanpId == id);
+                db.GiaCas.Remove(gia);
+                db.SaveChanges();
                 if (data == null)
                 {
                     return NotFound($"category with id {id} not found");
                 }
                 db.Sanphams.Remove(data);
                 db.SaveChanges();
-                var gia = db.GiaCas.FirstOrDefault(x => x.SanpId == id);
-                db.GiaCas.Remove(gia);
-                db.SaveChanges();
+                
                 return Ok(data);
 
             }

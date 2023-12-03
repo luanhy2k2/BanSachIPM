@@ -4,12 +4,14 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { AdminRoutingModule } from "./admin-routing.module";
 import { ProductComponent } from './product/product.component';
+import { EditComponent } from './product/edit/edit.component';
 
 
 @NgModule({
     declarations:[
     BranchComponent,
-    ProductComponent
+    ProductComponent,
+    EditComponent
   ],
     imports:[
         FormsModule,

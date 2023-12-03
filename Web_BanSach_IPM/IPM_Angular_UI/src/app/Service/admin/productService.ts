@@ -22,7 +22,13 @@ export class productService{
     addproduct(product: any) {
         return this.http.post<any>(`${url}/api/product/create`, product);
     }
+    editproduct(product: any) {
+        return this.http.post<any>(`${url}/api/product/update`, product);
+    }
     deleteproduct(id: any) {
         return this.http.delete<any>(`${url}/api/product/delete/${id}`);
+    }
+    getProductById(id:any):Observable<any[]>{
+        return this.http.get<any[]>(`${url}/api/product/getById/${id}`)
     }
 }

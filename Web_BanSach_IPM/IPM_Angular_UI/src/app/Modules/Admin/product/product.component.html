@@ -155,6 +155,7 @@
                                         </td>
                                         <td>{{x.gia}}</td>
                                         <td (click)="deleteproduct(x.sanpId)">Xoá</td>
+                                        <td [routerLink]="['/admin/product/edit', x.sanpId]">Sửa</td>
                                     </tr>
                                 </tbody>
                             </table>

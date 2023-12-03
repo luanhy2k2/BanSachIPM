@@ -14,7 +14,11 @@ export class BranchComponent {
   pageIndex: number = 0;
   totalPageArray: number[] = []
   name: string = "";
-  loaiName = '';
+  requestData = {
+    loaiId: 0,
+    loaiName: ''
+  };
+  
   ngOnInit(){
     this.getBranch();
     
@@ -22,7 +26,7 @@ export class BranchComponent {
   getBranch(){
     this.branchService.countBranch().subscribe(res=>{
       var total = Number(res);
-      var toatlPage = Math.ceil(total/2);
+      var toatlPage = Math.ceil(total/5);
       this.totalPageArray = Array.from({ length: toatlPage }, (_, index) => index + 1);
       this.branchService.getBranch(this.pageIndex).subscribe(res=>{
         this.branch = res;
@@ -47,9 +51,20 @@ export class BranchComponent {
     this.getBranch();
   }
   addBranch() {
-    this.branchService.addBranch(this.loaiName).subscribe(response=>{
-      alert("suceess")
+    this.branchService.addBranch(this.requestData).subscribe(response=>{
+      alert("suceess");
+      this.getBranch();
     }
+    
     );
+  }
+  deleteBranch(id: number) {
+    this.branchService.deleteBranch(id).subscribe(response=>{
+      alert("suceess");
+      this.getBranch();
+    }
+    
+    );
+    
   }
 }

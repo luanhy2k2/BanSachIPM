@@ -10,7 +10,7 @@ const url = 'https://localhost:7262';
 export class branchService{
     constructor(private http:HttpClient){}
     getBranch(pageIndex: any):Observable<branch[]>{
-        return this.http.get<branch[]>(`${url}/api/categories/getAll/${pageIndex}/2`);
+        return this.http.get<branch[]>(`${url}/api/categories/getAll/${pageIndex}/5`);
     }
     countBranch(){
         return this.http.get(`${url}/api/categories/count`);
@@ -20,5 +20,8 @@ export class branchService{
     }
     addBranch(branch: any) {
         return this.http.post<any>(`${url}/api/categories/create`, branch);
+    }
+    deleteBranch(id: any) {
+        return this.http.delete<any>(`${url}/api/categories/delete/${id}`);
     }
 }

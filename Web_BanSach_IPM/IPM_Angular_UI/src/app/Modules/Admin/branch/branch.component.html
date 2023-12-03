@@ -9,7 +9,7 @@
                         <hr />
                     </div>
                     <div class="row">
-                        <form>
+                        <div>
                             <div class="modal-body">
                                 <div class="col-12 col-s-12 padding-box">
                                     <label for="txtright">Mã loại:</label>
@@ -21,7 +21,7 @@
                                     <label for="txtright">Tên loại:</label>
                                 </div>
                                 <div class="col-12 col-s-12 padding-box">
-                                    <input [(ngModel)] = "loaiName" type="text" id="form-field-1" placeholder="Tên sách" class="col-xs-10 col-sm-5" />
+                                    <input [(ngModel)] = "requestData.loaiName" type="text" id="form-field-1" placeholder="Tên sách" class="col-xs-10 col-sm-5" />
                                 </div>
                              
                             </div>
@@ -30,7 +30,7 @@
                  
                               
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                                     <tr>
                                         <th>Mã loại sản phẩm</th>
                                         <th>Tên loại sản phẩm</th>
-                                    
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,6 +70,7 @@
                                         <td>
                                             {{item.loaiName}}
                                         </td>
+                                        <td (click)="deleteBranch(item.loaiId)">Xoá</td>
                                     </tr> 
                                 </tbody>
                             </table>
@@ -97,3 +98,6 @@
         
     </div>
 </div>
+
+
+  
